@@ -92,7 +92,7 @@ class Debugger extends Object {
  * @access public
  * @static
  */
-	function &getInstance($class = null) {
+	public static function &getInstance($class = null) {
 		static $instance = array();
 		if (!empty($class)) {
 			if (!$instance || strtolower($class) != strtolower(get_class($instance[0]))) {
@@ -566,7 +566,7 @@ class Debugger extends Object {
  * @static
  * @link http://book.cakephp.org/view/460/Using-the-Debugger-Class
  */
-	function invoke(&$debugger) {
+	public static function invoke(&$debugger) {
 		set_error_handler(array(&$debugger, 'handleError'));
 	}
 }

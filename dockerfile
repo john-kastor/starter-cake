@@ -14,6 +14,7 @@ RUN yum update -y && yum install -y \
     php-pdo \
     php-pear \
     php-devel \
+    php-memcache \
     httpd \
     git \
     gcc \

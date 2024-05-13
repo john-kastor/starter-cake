@@ -130,7 +130,7 @@ class Configure extends Object {
  * @return Configure instance
  * @access public
  */
-	function &getInstance($boot = true) {
+	public static function &getInstance($boot = true) {
 		static $instance = array();
 		if (!$instance) {
 			$instance[0] =& new Configure();
@@ -267,7 +267,7 @@ class Configure extends Object {
  * @return void
  * @access public
  */
-	function write($config, $value = null) {
+	public static function write($config, $value = null) {
 		$_this =& Configure::getInstance();
 
 		if (!is_array($config)) {
@@ -323,7 +323,7 @@ class Configure extends Object {
  * @return string value of Configure::$var
  * @access public
  */
-	function read($var = 'debug') {
+	public static function read($var = 'debug') {
 		$_this =& Configure::getInstance();
 
 		if ($var === 'debug') {
@@ -432,7 +432,7 @@ class Configure extends Object {
  * @return string Current version of CakePHP
  * @access public
  */
-	function version() {
+	public static function version() {
 		$_this =& Configure::getInstance();
 
 		if (!isset($_this->Cake['version'])) {
@@ -488,7 +488,7 @@ class Configure extends Object {
  * @return array numeric keyed array of core lib paths
  * @access public
  */
-	function corePaths($type = null) {
+	public static function corePaths($type = null) {
 		$paths = Cache::read('core_paths', '_cake_core_');
 		if (!$paths) {
 			$paths = array();

@@ -65,7 +65,7 @@ class Cache extends Object {
  * @access public
  * @static
  */
-	function &getInstance() {
+	public static function &getInstance() {
 		static $instance = array();
 		if (!$instance) {
 			$instance[0] =& new Cache();
@@ -95,7 +95,7 @@ class Cache extends Object {
  * @access public
  * @static
  */
-	function config($name = null, $settings = array()) {
+	public static function config($name = null, $settings = array()) {
 		$_this =& Cache::getInstance();
 		if (is_array($name)) {
 			$settings = $name;
@@ -221,7 +221,7 @@ class Cache extends Object {
  * @access public
  * @static
  */
-	function write($key, $value, $config = null) {
+	public static function write($key, $value, $config = null) {
 		$_this =& Cache::getInstance();
 
 		if (is_array($config)) {
@@ -270,7 +270,7 @@ class Cache extends Object {
  * @access public
  * @static
  */
-	function read($key, $config = null) {
+	public static function read($key, $config = null) {
 		$_this =& Cache::getInstance();
 
 		if (isset($_this->__config[$config])) {
@@ -424,6 +424,7 @@ class CacheEngine extends Object {
  * @access public
  */
 	function init($settings = array()) {
+		date_default_timezone_set('GMT');
 		$this->settings = array_merge(array('prefix' => 'cake_', 'duration'=> 3600, 'probability'=> 100), $this->settings, $settings);
 		if (!is_numeric($this->settings['duration'])) {
 			$this->settings['duration'] = strtotime($this->settings['duration']) - time();

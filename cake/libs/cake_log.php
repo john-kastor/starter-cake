@@ -64,7 +64,8 @@ class CakeLog {
  * @access public
  * @static
  */
-	function write($type, $msg) {
+	public static function write($type, $msg) {
+		date_default_timezone_set('GMT');
 		if (!defined('LOG_ERROR')) {
 			define('LOG_ERROR', 2);
 		}
