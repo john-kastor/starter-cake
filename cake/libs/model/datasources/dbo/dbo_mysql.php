@@ -369,7 +369,6 @@ class DboMysql extends DboMysqlBase {
 		$config = $this->config;
 		$connect = $config['connect'];
 		$this->connected = false;
-
 		if (!$config['persistent']) {
 			$this->connection = mysql_connect($config['host'] . ':' . $config['port'], $config['login'], $config['password'], true);
 		} else {
@@ -383,7 +382,6 @@ class DboMysql extends DboMysqlBase {
 		if (isset($config['encoding']) && !empty($config['encoding'])) {
 			$this->setEncoding($config['encoding']);
 		}
-
 		$this->_useAlias = (bool)version_compare(mysql_get_server_info($this->connection), "4.1", ">=");
 
 		return $this->connected;

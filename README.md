@@ -10,13 +10,20 @@ Para hacer uso de la applicacion/contenedor, usa los siguientes comandos en tu t
 ```bash
 docker-compose up -d #monta el contenedor en segundo plano
 docker exec cake-app #accede al contenedor y ejecuta comandos (ejemplo: docker exec cake-app php -v)
+#or
+docker compose --env-file .env up -d # utiliza el .env especificado para crear los contenedores
+docker compose exec seviceName bash
+## EJEMPLOS
+docker compose exec app bash # bash en el contenedor de la app
+docker compose exec mysql bash # bash en el contenedor de la base de datos mysql
+docker compose exec app bash -c "php -v" # -c "comandos" permite ejecutar comandos sin ingresar al shell
+
 docker-compose down -v #detiene y elimina el contenedor
 ```
 
-Una vez que el contenedor este corriendo, puedes acceder a la aplicación en tu navegador con la siguiente URL:
-```
-http://localhost/
-```
+Una vez que el contenedor este corriendo, puedes acceder a la aplicación en tu navegador con las siguientes URL:
+>[cakephp -> http://localhost/  ](http://localhost/)
+>[phpmyadmin -> http://localhost:8080/ ](http://localhost:8080/)
 
 ## Configuración
 

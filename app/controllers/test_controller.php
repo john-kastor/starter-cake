@@ -6,7 +6,7 @@ class TestController extends AppController
 
   function index()
   {
-    $categorias = $this->Categoria->find("all");
+    $categorias = $this->Categoria->query("select * from categorias");
     $this->set('message', 'MODELO CATEGORIAS');
     $this->set('categorias', $categorias);
     $this->render('index');

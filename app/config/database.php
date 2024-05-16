@@ -13,12 +13,13 @@ class DATABASE_CONFIG {
   /**/
 	var $default = array(
 		'driver' => 'mysql',
-		'persistent' => true,
+		'persistent' => false,
 		'host' => 'mysql',
 		'port' => 3306,
 		'login' => 'startercake',
 		'password' => 'cake1234',
-		'database' => 'up_dt',
+    'database' => 'up_dt',
+    'encoding' => 'utf8'
 	);
 }
 ?>
