@@ -22,8 +22,8 @@ docker-compose down -v #detiene y elimina el contenedor
 ```
 
 Una vez que el contenedor este corriendo, puedes acceder a la aplicación en tu navegador con las siguientes URL:
->[cakephp -> http://localhost/  ](http://localhost/)
->[phpmyadmin -> http://localhost:8080/ ](http://localhost:8080/)
+* [cakephp -> http://localhost/  ](http://localhost/) \
+* [phpmyadmin -> http://localhost:8080/ ](http://localhost:8080/)
 
 ## Configuración
 
